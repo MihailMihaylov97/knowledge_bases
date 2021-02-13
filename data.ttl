@@ -1,0 +1,98 @@
+Comet a rdfs:Class .
+Asteroid a rdfs:Class .
+SpaceObject a rdfs:Class .
+Planet a rdfs:Class .
+Universe a rdfs:Class .
+Galaxy a rdfs:Class .
+NaturalSatelite a rdfs:Class .
+Satelite a rdfs:Class .
+SpaceCraft a rdfs:Class .
+ManMade a rdfs:Class .
+Star a rdfs:Class .
+
+ManMade rdfs:subClassOf Universe .
+SpaceObject rdfs:subClassOf Universe .
+Planet rdfs:subClassOf SpaceObject .
+Star rdfs:subClassOf SpaceObject .
+Asteroid rdfs:subClassOf SpaceObject .
+Comet rdfs:subClassOf SpaceObject .
+NaturalSatelite rdfs:subClassOf SpaceObject .
+Galaxy rdfs:subClassOf SpaceObject .
+Satelite rdfs:subClassOf ManMade .
+SpaceCraft rdfs:subClassOf ManMade .
+
+
+orbits a rdf:Property .
+orbits rdfs:range SpaceObject .
+orbits rdfs:domain SpaceObject .
+
+fliesaround a rdf:Property .
+fliesaround rdfs:range SpaceObject .
+fliesaround rdfs:domain ManMade .
+
+freefalls a rdf:Property .
+freefalls rdfs:range Planet .
+freefalls rdfs:domain Asteroid .
+
+name a rdf:Property .
+name rdfs:range rdfs:Literal .
+name rdfs:domain Universe .
+
+landson a rdf:Property .
+landson rdfs:range SpaceObject .
+landson rdfs:domain SpaceCraft .
+
+crashes a rdf:Property .
+crashes rdfs:range SpaceObject .
+crashes rdfs:domain ManMade .
+
+follows a rdf:Property .
+follows rdfs:range Planet .
+follows rdfs:domain NaturalSatelite .
+
+
+First_Galaxy a Universe .
+
+Earth a Planet .
+Earth name "Planet Earth" .
+
+Jupyter a Planet .
+Jupyter name "Planet Jupyter" .
+
+Mars a Planet .
+Mars name "Planet Mars" .
+
+Sun a Star .
+Sun name "Our Big Yellow Sun" .
+
+Hallley a Comet .
+Hallley name "Halley's Comet" .
+
+Appollo13 a SpaceCraft .
+Appollo13 name "Appollo13 Space Shuttle" .
+
+Appollo11 a SpaceCraft .
+Appollo11 name "Appollo11 Space Shuttle Crashed" .
+
+Asteroid1 a Asteroid . 
+Asteroid1 name "Doomsday Asteroid" .
+Asteroid1 freefalls Earth .
+
+Satelite1 a Satelite .
+Satelite1 fliesaround Earth
+
+Moon a NaturalSatelite .
+
+Earth orbits Sun .
+Jupyter orbits Sun .
+Mars orbits Sun .
+
+Hallley orbits Earth .
+
+
+Appollo13 fliesaround Earth .
+Appollo13 landson Earth .
+Appollo13 landson Jupyter .
+
+Appollo11 fliesaround Mars .
+Appollo11 crashes Earth .
